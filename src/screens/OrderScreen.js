@@ -21,6 +21,8 @@ const OrderScreen = ({ match }) => {
   const orderPay = useSelector((state) => state.orderPay);
   const { loading: loadingPay, success: successPay } = orderPay;
 
+  const clientId = "AQJlTGbxF_iZ59r44qO_yLTqhQ5Mbsq6rGbZ-kkp__7lAcBHNpmrriaOmb4LwiDVT-zDc-ERq3WUtwOS";
+
   if (!loading) {
     const addDecimals = (num) => {
       return (Math.round(num * 100) / 100).toFixed(2);
@@ -33,7 +35,7 @@ const OrderScreen = ({ match }) => {
 
   useEffect(() => {
     const addPayPalScript = async () => {
-      const { data: clientId } = await axios.get("/api/config/paypal");
+      // const { data: clientId } = await axios.get("https://shoseshop-frontend.vercel.app/api/config/paypal");
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
