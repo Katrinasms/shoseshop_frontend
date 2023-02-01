@@ -12,7 +12,7 @@ import {
 } from "../Constants/ProductConstants";
 import { logout } from "./userActions";
 
-const url = "https://shoseshop-backend-production.up.railway.app/"
+const url = "https://shoseshop-backend-production.up.railway.app"
 
 // PRODUCT LIST
 export const listProduct =
@@ -21,7 +21,7 @@ export const listProduct =
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
       const { data } = await axios.get(
-        `${url}api/products`
+        `${url}/api/products`
       );
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
     } catch (error) {
@@ -39,7 +39,7 @@ export const listProduct =
 export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
-    const { data } = await axios.get(`${url}api/products/${id}`);
+    const { data } = await axios.get(`${url}/api/products/${id}`);
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -69,7 +69,7 @@ export const createProductReview =
         },
       };
 
-      await axios.post(`${url}api/products/${productId}/review`, review, config);
+      await axios.post(`${url}/api/products/${productId}/review`, review, config);
       dispatch({ type: PRODUCT_CREATE_REVIEW_SUCCESS });
     } catch (error) {
       const message =
