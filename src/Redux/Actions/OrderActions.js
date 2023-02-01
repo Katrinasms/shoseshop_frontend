@@ -16,7 +16,7 @@ import axios from "axios";
 import { CART_CLEAR_ITEMS } from "../Constants/CartConstants";
 import { logout } from "./userActions";
 
-const url = "https://shoseshop-backend-production.up.railway.app"
+const url = "https://shoseshopbackend-production.up.railway.app"
 
 // CREATE ORDER
 export const createOrder = (order) => async (dispatch, getState) => {

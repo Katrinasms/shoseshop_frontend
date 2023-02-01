@@ -12,7 +12,7 @@ import {
 } from "../Constants/ProductConstants";
 import { logout } from "./userActions";
 
-const url = "https://shoseshop-backend-production.up.railway.app"
+const url = "https://shoseshopbackend-production.up.railway.app"
 
 // PRODUCT LIST
 export const listProduct =

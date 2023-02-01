@@ -6,7 +6,7 @@ import {
   CART_SAVE_SHIPPING_ADDRESS,
 } from "../Constants/CartConstants";
 
-const url = "https://shoseshop-backend-production.up.railway.app"
+const url = "https://shoseshopbackend-production.up.railway.app"
 
 // ADD TO CART
 export const addToCart = (id, qty) => async (dispatch, getState) => {
