@@ -24,8 +24,10 @@ const ShopSection = (props) => {
     //   setProducts(data);
     // }
     // fetchproducts()},[]);
-    dispatch(listProduct());
-  }, [dispatch]);
+    dispatch(listProduct(keyword, pagenumber));
+  }, [dispatch, keyword, pagenumber]);
+
+  // keyword, pagenumber
   return (
     <>
       <div className="container">
@@ -73,11 +75,11 @@ const ShopSection = (props) => {
                 )}
 
                 {/* Pagination */}
-                {/* <Pagination
+                <Pagination
                   pages={pages}
                   page={page}
                   keyword={keyword ? keyword : ""}
-                /> */}
+                />
               </div>
             </div>
           </div>
